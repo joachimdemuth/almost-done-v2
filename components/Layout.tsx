@@ -3,6 +3,7 @@ import { Header, Footer, MainContainer } from "../styles/mainStyles";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
+import FloatingNav from "./FloatingNav";
 
 const Nav = styled.nav`
   display: flex;
@@ -37,7 +38,7 @@ const BrandName = styled.p`
 export default function Layout({ children }: any) {
   return (
     <MainContainer>
-      <Header>
+      {/* <Header>
         <LogoContainer>
          
           <BrandName>
@@ -52,11 +53,11 @@ export default function Layout({ children }: any) {
           <Link href="/photography">Photograpy</Link>
           <Link href="/contact">Contact</Link>
         </Nav>
-      </Header>
+      </Header> */}
       {children}
-      <Footer>
-        Footer
-      </Footer>
+    
+      <FloatingNav />
+        
     </MainContainer>
   );
 }

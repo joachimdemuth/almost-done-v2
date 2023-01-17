@@ -7,9 +7,7 @@ const GlobalStyle = createGlobalStyle`
 html, body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  font-family: 'Work Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -25,6 +23,8 @@ html, body {
 
 export const theme = {
   colors: {
+    blue: '#0000FF',
+    orange: '#FF4500',
 
   }
 }

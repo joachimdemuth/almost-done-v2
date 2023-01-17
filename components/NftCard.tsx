@@ -3,56 +3,74 @@ import styled from "styled-components";
 import Image from "next/image";
 
 const CardContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 181px;
-    height: 279px;
-    border-radius: 1.75rem;
-    border: 1px solid blue;
-    margin-bottom:16px;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 400px;
+  border-radius: 16px;
+  border: 1px solid blue;
+  padding: 16px;
+  gap: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  background: #ff450099;
+  backdrop-filter: blur(11.5px);
 `;
 
 const ImageContainer = styled.div`
-    display: flex;
-    min-height: 181px;
-    width: 100%;
-    border-bottom: 1px solid blue;
-
+  display: flex;
+  width: 100%;
 `;
 
 const NftImage = styled.img`
-border-radius: 1.75rem 1.75rem 0 0;
-    max-width: 100%;
-    height: auto;
-    justify-content: center;
-    align-self: center;
-
+  border-radius: 8px;
+  max-width: 100%;
+  max-height: 100%;
 `;
 const MetaContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    color:blue;
-    justify-content: space-between;
-    font-size: 14px;
-    margin: 8px 8px 16px 8px;
-    height: 100%;
+  display: flex;
+  flex-direction: row;
+  color: blue;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin: 8px 8px 16px 8px;
+  height: 100%;
 `;
 
 const TitleAndNumber = styled.div`
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
-const TextElement = styled.p``;
-
-const ImageLink = styled.div`
-    color: blue;
-    font-size: 14px;
-    font-weight: 400;
-    text-decoration: underline;
+const Title = styled.p`
+  font-size: 20px;
+  font-weight: 500;
+  font-style: italic;
+  margin: 0;
+  color: ${({ theme }) => theme.colors.blue};
 `;
 
+const TextElement = styled.p`
+  font-size: 16px;
+  font-weight: 500;
+  font-style: italic;
+  margin: 0;
+  color: ${({ theme }) => theme.colors.blue};
+`;
+
+const Button = styled.button`
+  background: ${({ theme }) => theme.colors.blue};
+  font-size: 18px;
+  font-weight: 500;
+  font-style: italic;
+  border:none;
+  border-radius: 50px;
+  padding: 8px 24px;
+color: ${({ theme }) => theme.colors.orange};
+
+`;
 
 interface NftCardProps {
   url: string;
@@ -66,21 +84,16 @@ export default function NftCard(props: NftCardProps) {
     <CardContainer>
       <ImageContainer>
         <NftImage src={props.url} alt={props.title} />
-
-
       </ImageContainer>
       <MetaContainer>
         <TitleAndNumber>
-          <TextElement>{props.title}</TextElement>
+          <Title>{props.title}</Title>
           <TextElement>{props.number}</TextElement>
         </TitleAndNumber>
-        <ImageLink>
-            <a href={props.url} target="_blank" rel="noreferrer" >
-
-            <TextElement>See full image</TextElement>
-            </a>
-
-        </ImageLink>
+        <Button>
+          {/* add props.url to the button link */}
+          Vis
+        </Button>
       </MetaContainer>
     </CardContainer>
   );
